@@ -24,6 +24,10 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
 
+# quakes-main (partner's Microservice)
+In the project directory, you can run:
+
+### `python quakeFlask.py`
 
 # CS-361/OpenAIMicroservice (project microservice)
 
