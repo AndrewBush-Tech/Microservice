@@ -1,4 +1,4 @@
-# CS361/weather-app (project)
+# CS-361/weather-app (project)
 
 In the project directory, you can run:
 
