@@ -116,7 +116,7 @@ const handleCancelSearch = () => {
     </div>
     <div className="forecast">{renderForecast()}</div>
         <div className="navigation">
-            <Link to="/page1" className="button"style={{color: 'white'}}>Click to show details of weather</Link>
+            <Link to="/page1" className="button"style={{color: 'white'}}>Click here if you also want to get earthquake data near you</Link>
         </div>
         <div className="bottom-padding">
             <p>_</p>

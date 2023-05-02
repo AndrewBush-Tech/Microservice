@@ -24,8 +24,10 @@ app = Flask(__name__)
 def get_quakes(coords, period): 
     """
     Gets data about earthquakes in the specificied time period from USGS, then determines nearest quake
+
     ::param coords:: A 2-item list of [latitude, longitude]
     ::param period:: string - represention of time period for which quakes are to be fetched (can be 'h', 'd', or 'm')
+
     ::returns::  JSON object containing three values: 'count' of total quakes
                                                       'magnitude' of nearest quake
                                                       'location' of nearest quake
@@ -92,6 +94,7 @@ def get_those_quakes():
     Calls methods to get coordinates and interact with USGS API
     Example of URL string: 'http://localhost:5000/quakes?time=h&lat=43&lon=%2D91' - note %2D url encoding for ' - '
                            'http://localhost:5000/quakes?time=h&lat=43&lon=65' - no URL encoding for negative value
+
     ::returns:: JSON object if calling externally
                 Flask template if calling internally
     """
