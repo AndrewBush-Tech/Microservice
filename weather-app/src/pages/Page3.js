@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import backArrow from '../back-arrow.png';
+import backArrow from '../images/back-arrow.png';
 import './Page3.css';
 
 function Page3() {
