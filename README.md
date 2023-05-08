@@ -56,6 +56,6 @@ In the project directory, you can run program by:
 ### `flask run`
 
 
-## UML Sequence Diagram for Microservice
+## UML Sequence Diagram for Microservice:
 
 [UML Microservice (2).pdf](https://github.com/drewbush1990/CS361/files/11424042/UML.Microservice.2.pdf)
