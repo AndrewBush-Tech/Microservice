@@ -37,7 +37,7 @@ In the project directory, you can run:
 * Include the request URL with the query parameters "one", "two", and "three", each of which represents a word or phrase to search for on Wikipedia.
 * Include the API key "api_key = 'API key goes here'" and "headers = {'x-api-key': api_key}" in your program making the request.
 
-An example call would be ""http://localhost:8000/search?one=Python&two=version&three=3" to look up information about the Python version 3. The title, URL, and summary of the Wikipedia entry for Python version 3 will be returned in a JSON response.
+An example call would be ""https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search?one=Python&two=version&three=3" to look up information about the Python version 3. The title, URL, and summary of the Wikipedia entry for Python version 3 will be returned in a JSON response.
 
 ## How to RECEIVE data from the microservice:
 
