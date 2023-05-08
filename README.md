@@ -33,24 +33,20 @@ In the project directory, you can run:
 
 ## How to REQUEST data from the microservice:
 
-* Enter the URL "http://localhost:8000/search" in an HTTP GET request.
+* Enter the URL "https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search" in an HTTP GET request.
 * Include the request URL with the query parameters "one", "two", and "three", each of which represents a word or phrase to search for on Wikipedia.
-* By eliminating special characters and changing all letters to lowercase, the microservice will clean the search terms.
-* The microservice will look for a Wikipedia page that corresponds to the refined search terms.
-* The microservice will return a JSON response with the page's title, URL, and summary if a page is found.
-* The microservice will deliver an error message as part of the JSON response if no page is discovered or if there are numerous results.
+* Include the API key "api_key = 'API key goes here'" and "headers = {'x-api-key': api_key}" in your program making the request.
 
 An example call would be ""http://localhost:8000/search?one=Python&two=version&three=3" to look up information about the Python version 3. The title, URL, and summary of the Wikipedia entry for Python version 3 will be returned in a JSON response.
 
 ## How to RECEIVE data from the microservice:
 
-* Send an HTTP GET request to "http://localhost:8000/search" to perform a search.
-* Include the request URL with the query parameters "one", "two", and "three", each of which represents a word or phrase to search for on Wikipedia.
+* Send an request to AWS services as stated above and will recieve a request and return an application/JSON file.
 * By eliminating special characters and changing all letters to lowercase, the microservice will clean the search terms.
 * The microservice will look for a Wikipedia page that corresponds to the refined search terms.
 * The microservice will return a JSON response with the page's title, URL, and summary if a page is found.
 * The microservice will deliver an error message as part of the JSON response if no page is discovered or if there are numerous results.
-* Obtain the microservice's JSON answer.
+* The sent request will recieve the microservice's JSON answer with the searched Wikipedia site information.
 
 In the project directory, you can run program by:
 
