@@ -48,13 +48,6 @@ An example call would be ""https://fejxhfgkg7.execute-api.us-east-2.amazonaws.co
 * The microservice will deliver an error message as part of the JSON response if no page is discovered or if there are numerous results.
 * The sent request will recieve the microservice's JSON answer with the searched Wikipedia site information.
 
-In the project directory, you can run program by:
-
-### `pip install -r requirements.txt`
-### `$env:FLASK_APP="app.py"`      
-### `$env:FLASK_RUN_PORT=8000`
-### `flask run`
-
 
 ## UML Sequence Diagram for Microservice:
 
