@@ -1,4 +1,4 @@
 # weather-app
-## Create file named Config.js in the src folder
+### Create file named Config.js in the src folder
 ### copy and paste this into Config.js file:
-### export const API_KEY = 'Put API key from openweathermap HERE';
+### "export const API_KEY = 'Put API key from openweathermap HERE';"
