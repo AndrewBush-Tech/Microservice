@@ -1,7 +1,7 @@
 # weather-app
-Create file named Config.js in the src folder
-copy and paste this into Config.js file:
-  *export const API_KEY = 'API key from openweathermap API HERE';
+## Create file named Config.js in the src folder
+### copy and paste this into Config.js file:
+#### export const API_KEY = 'API key from openweathermap API HERE';
 
 
 # Getting Started with Create React App
