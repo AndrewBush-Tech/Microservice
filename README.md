@@ -23,7 +23,7 @@ In the project directory, you can run:
 * Include three parameters at end of URL one="put parameter here", two="put parameter here",three="put parameter here".
 
 #### Example call from URL:
-https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search?one=Python&two=version&three=3:
+#### https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search?one=Python&two=version&three=3:
 
 ### WAY TWO (getting parameters from user and passing as a POST request):
 * Include https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search in HTTP request.
@@ -31,16 +31,16 @@ https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search?one=Python&tw
 * Either use as json and/or print to page/console.
 
 #### Example call using Flask:
-@app.route("/", methods=("GET", "POST"))
-def index():
-    if request.method == "POST":
-        one = request.form["one"]
-        two = request.form["two"]
-        three = request.form["three"]
-        api_url = 'https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search'
-        wikiresponse = requests.get(api_url, params={'one': one, 'two': two, 'three': three})
-        summary = wikiresponse.json()['summary']
-        print(summary)
+#### @app.route("/", methods=("GET", "POST"))
+#### def index():
+####     if request.method == "POST":
+####         one = request.form["one"]
+####         two = request.form["two"]
+####         three = request.form["three"]
+####         api_url = 'https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search'
+####         wikiresponse = requests.get(api_url, params={'one': one, 'two': two, 'three': three})
+####         summary = wikiresponse.json()['summary']
+####         print(summary)
 
 ## How to RECEIVE data from the microservice:
 * Send an request to AWS services as stated above and will recieve a request and return an application/JSON file.
