@@ -22,7 +22,7 @@ In the project directory, you can run:
 * Include "https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search".
 * Include three parameters at end of URL one="put parameter here", two="put parameter here",three="put parameter here".
 
-####Example call from URL:
+#### Example call from URL:
 https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search?one=Python&two=version&three=3:
 
 ### WAY TWO (getting parameters from user and passing as a POST request):
@@ -30,7 +30,7 @@ https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search?one=Python&tw
 * Include requests for the three parameters as inputs from users.
 * Either use as json and/or print to page/console.
 
-####Example call using Flask:
+#### Example call using Flask:
 @app.route("/", methods=("GET", "POST"))
 def index():
     if request.method == "POST":
