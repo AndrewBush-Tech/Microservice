@@ -23,7 +23,8 @@ In the project directory, you can run:
 * Error handling for special characters: "!@#$%^&*()_+=-[]{}|\\;':\"<>,?/~`." 
 * Error handling for Uppercase letters. 
 * Will handle multiple input parameters at a time.
-* Will only handle human readable words as input parameters. 
+* Will handle one or two missing input parameters.
+* Will only handle human readable words as input parameters.
 * Query parameter keys cannot be changed and must remain as 'one','two', and 'three'.
 
 #### Example of an acceptable user input parameter:
