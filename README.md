@@ -24,7 +24,7 @@ In the project directory, you can run:
 * Error handling for Uppercase letters. 
 * Will handle multiple inputs parameters in one key value.
 * Will only handle human readable words as input parameters. 
-* Parameter keys cannot be changed and must remain as 'one','two', and 'three'.
+* Query parameter keys cannot be changed and must remain as 'one','two', and 'three'.
 
 #### Example of an acceptable user input parameter:
 * ?cat
