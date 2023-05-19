@@ -26,13 +26,13 @@ In the project directory, you can run:
 * Will only handle human readable words as input parameters. 
 * Parameter keys cannot be changed and must remain as 'one','two', and 'three'.
 
-#### Example of an acceptable user input parameters:
+#### Example of an acceptable user input parameter:
 * ?cat
 * &DOG
 * The dog ran
 * Te Quiero,
 
-#### Example of an unacceptable user input parameters:
+#### Example of an unacceptable user input parameter:
 * sdchjbgwei
 * VDBSWJDHL
 * kqwajbxciBB kJBsxd;kiqwe
