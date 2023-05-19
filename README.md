@@ -22,7 +22,7 @@ In the project directory, you can run:
 * Include three parameters at end of URL one="put parameter here", two="put parameter here",three="put parameter here".
 * Error handling for special characters: "!@#$%^&*()_+=-[]{}|\\;':\"<>,?/~`." 
 * Error handling for Uppercase letters. 
-* Will handle multiple inputs parameters in one key value.
+* Will handle multiple input parameters at a time.
 * Will only handle human readable words as input parameters. 
 * Query parameter keys cannot be changed and must remain as 'one','two', and 'three'.
 
