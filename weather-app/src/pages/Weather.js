@@ -27,10 +27,10 @@ function Weather() {
     return axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${API_KEY}`);
   }
 
-  // handle day of the week selection
-const handleDaySelect = (day) => {
-  setSelectedDay(day);
-}
+  const handleDaySelect = (day) => {
+    setSelectedDay(day);
+  };
+
   const handleUnitTypeChange = async (event) => {
     const units = event.target.value;
     setUnits(units);
@@ -40,23 +40,24 @@ const handleDaySelect = (day) => {
     }
   };
 
-  const handleCityChange = async (event) => {
-    const value = event.target.value;
-    setCity(value);
-    if (value.length > 2) {
-      const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${API_KEY}`);
-      const cities = response.data.filter((city, index, self) => self.findIndex(c => c.name === city.name) === index);
-      setSuggestedCities(cities);
-    } else {
-      setSuggestedCities([]);
-    }
-    if (event.keyCode === 13 && suggestedCities.length > 0) {
-      const response = await getWeatherData(suggestedCities[0].name, units);
-      setCity(response.data.city.name);
-      setWeatherData(response.data);
-      setSuggestedCities([]);
-    }
-  };
+  const handleSubmit = async () => {
+  if (city) {
+    const response = await getWeatherData(city, units);
+    setWeatherData(response.data);
+  }
+};
+
+const handleCityChange = async (event) => {
+  const value = event.target.value;
+  setCity(value);
+  if (value.length > 2) {
+    const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${API_KEY}`);
+    const cities = response.data.filter((city, index, self) => self.findIndex(c => c.name === city.name) === index);
+    setSuggestedCities(cities);
+  } else {
+    setSuggestedCities([]);
+  }
+};
 
   const handleCancelSearch = () => {
     setCity('');
@@ -75,9 +76,7 @@ const handleDaySelect = (day) => {
   };
 
   const handleDayClick = (dayOfWeek, city) => {
-    // Navigate to page 5 with the selected day of the week
-   window.location.href = `/${dayOfWeek}/${city}`;
-
+    window.location.href = `/${dayOfWeek}/${city}`;
   };
 
   const renderForecast = () => {
@@ -113,13 +112,16 @@ const handleDaySelect = (day) => {
     return Object.keys(groupedForecast).map((dayOfWeek) => {
       const { icon, description, temperature, feelsLike } = groupedForecast[dayOfWeek];
 
-
-
       return (
         <div className="forecast-item" key={dayOfWeek} onClick={() => handleDayClick(dayOfWeek, city)}>
-<Link to={`/${selectedDay}?city=${city}`} className="button" style={{ color: 'white', fontSize: '35px', fontWeight: 'bold' }} onClick={() => handleDaySelect(dayOfWeek)}>
-  {dayOfWeek}
-</Link>
+          <Link
+            to={`/${selectedDay}?city=${city}`}
+            className="button"
+            style={{ color: 'white', fontSize: '35px', fontWeight: 'bold' }}
+            onClick={() => handleDaySelect(dayOfWeek)}
+          >
+            {dayOfWeek}
+          </Link>
           <img src={`http://openweathermap.org/img/w/${icon}.png`} alt={description} />
           <ul style={{ fontWeight: 'bold', color: 'black' }}>{description}</ul>
           <ul style={{ fontWeight: 'bold', color: 'black' }}>Temperature: {temperature}°{units === 'imperial' ? 'F' : 'C'}</ul>
@@ -129,51 +131,59 @@ const handleDaySelect = (day) => {
     });
   };
 
- return (
-  <div style={{ paddingTop: '50px', paddingBottom: '50px' }} className="page-container">
-  <h1>Welcome to the Weather App</h1>
-  <div className="weather">
-    <div className="location-input">
-        { suggestedCities.length > 0 &&
-          <ul className="suggestions">
-              { suggestedCities.map((city) =>
-                  <div key={city.name} className={city === selectedCity ? 'selected' : ''} onClick={() => {
-                  setCity(city.name);
-                  setSuggestedCities([]);
-                  }}>
+  return (
+    <div style={{ paddingTop: '50px', paddingBottom: '50px' }} className="page-container">
+      <h1>Welcome to the Weather App</h1>
+      <div className="weather">
+        <div className="location-input">
+          {suggestedCities.length > 0 && (
+            <ul className="suggestions">
+              {suggestedCities.map((city) => (
+                <div
+                  key={city.name}
+                  className={city === selectedCity ? 'selected' : ''}
+                  onClick={() => {
+                    setCity(city.name);
+                    setSuggestedCities([]);
+                  }}
+                >
                   {city.name}
-                  </div>
-              )}
-          </ul>
-       }
-      <input type="text" placeholder="Enter city name i.e. Miami" value={city} onChange={handleCityChange} onKeyDown={handleCityChange} />
-      <div>
-          <input
-          type="radio"
-          name="units"
-          value="imperial"
-          checked={units === 'imperial'}
-          onChange={handleUnitTypeChange}
-          defaultChecked
-        /> Imperial
-          <input
-          type="radio"
-          name="units"
-          value="metric"
-          checked={units === 'metric'}
-          onChange={handleUnitTypeChange}
-        /> Metric
-</div>
-        { city.length > 0 && <button onClick={handleCancelSearch}>Cancel</button> }
-      <button onClick={handleGetCurrentLocation}>Get Current Location</button>
-    </div>
-    <div className="forecast">{renderForecast()}</div>
-        <div className="navigation">
-            <Link to="/page1" className="button"style={{color: 'white'}}>Click here if you also want to get earthquake data near you</Link>
+                </div>
+              ))}
+            </ul>
+          )}
+          <input type="text" placeholder="Enter city name i.e. Miami" value={city} onChange={handleCityChange} />
+          <div>
+            <input
+              type="radio"
+              name="units"
+              value="imperial"
+              checked={units === 'imperial'}
+              onChange={handleUnitTypeChange}
+            />{' '}
+            Imperial
+            <input
+              type="radio"
+              name="units"
+              value="metric"
+              checked={units === 'metric'}
+              onChange={handleUnitTypeChange}
+            />{' '}
+            Metric
+          </div>
+          {city.length > 0 && <button onClick={handleCancelSearch}>Cancel</button>}
+         <button onClick={handleSubmit}>Submit</button>
+          <button onClick={handleGetCurrentLocation}>Get Current Location</button>
         </div>
+        <div className="forecast">{renderForecast()}</div>
+        <div className="navigation">
+          <Link to="/page1" className="button" style={{ color: 'white' }}>
+            Click here if you also want to get earthquake data near you
+          </Link>
+        </div>
+      </div>
     </div>
-    </div>
-);
+  );
 }
 
 export default Weather;
