@@ -31,12 +31,12 @@ const handleCityChange = async (event) => {
   } else {
     setSuggestedCities([]);
   }
-  if (event.keyCode === 13) {
+  if (event.keyCode === 13 && suggestedCities.length > 0) {
     setCity(suggestedCities[0].name);
     setSuggestedCities([]);
   }
-
 };
+
 
   window.onload = function() {
         alert("Welcome to The DEMO page. Here you will see a weekly forcast of the weather! Please navigate and hover over options to see the prompts associated to them. When finished simply press the back button or use the navigation button on the bottom of the page.");
