@@ -1,4 +1,4 @@
-# CS-361/weather-app (project)
+# Microservice/weather-app (project)
 In the project directory, you can run:
 ### `npm install`
 ### `npm start`
@@ -16,7 +16,7 @@ Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
 In the project directory, you can run:
 ### `python quakeFlask.py`
 
-# CS-361/OpenAIMicroservice (project microservice)
+# Microservice/OpenAIMicroservice (project microservice)
 ## How to REQUEST data from the microservice:
 * Include "https://fejxhfgkg7.execute-api.us-east-2.amazonaws.com/Beta/search".
 * Include three parameters at end of URL one="put parameter here", two="put parameter here",three="put parameter here".
